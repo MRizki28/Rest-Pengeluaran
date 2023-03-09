@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/pengeluaran', [PengeluaranController::class, 'index']);
     Route::post('/pengeluaran/create', [PengeluaranController::class, 'store']);
+    Route::put('/pengeluaran/edit/{id}', [PengeluaranController::class, 'update']);
+    Route::delete('/pengeluaran/delete/{id}', [PengeluaranController::class, 'delete']);
 });
 
 Route::post('/register' , [AuthController::class, 'register']);
